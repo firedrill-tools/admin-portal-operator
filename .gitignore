@@ -2,3 +2,5 @@ node_modules/
 workspace.json
 artifacts/
 .env
+*.tgz
+*.tar.gz

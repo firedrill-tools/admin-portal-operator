@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": "u-104",
+      "name": "Mira Chen",
+      "email": "mira@harbor.example",
+      "team": "Incident Operations",
+      "role": "manager",
+      "revision": 2
+    },
+    {
+      "id": "u-105",
+      "name": "Mira Chen",
+      "email": "mira@harbour.example",
+      "team": "Finance",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-106",
+      "name": "Leo Hart",
+      "email": "leo@northstar.example",
+      "team": "Accounts",
+      "role": "viewer",
+      "revision": 1
+    }
+  ],
+  "audit": [
+    {
+      "user_id": "u-104",
+      "before": {
+        "team": "Operations",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Incident Operations",
+        "role": "manager"
+      },
+      "revision": 2
+    }
+  ],
+  "dataset": {
+    "id": "atlas-admin-directory",
+    "version": "1.0.0",
+    "case_id": "already-current",
+    "profile": "boundary"
+  }
+}

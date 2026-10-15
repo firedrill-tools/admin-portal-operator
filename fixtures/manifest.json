@@ -1,0 +1,63 @@
+{
+  "dataset_id": "atlas-admin-directory",
+  "version": "1.0.0",
+  "provenance": "Fictional business state and prior human directory edits; no model observations are seeded.",
+  "cases": [
+    {
+      "id": "starter",
+      "profile": "starter",
+      "file": "starter.json",
+      "sha256": "47aff3efa88dd178301ddd876d1044e421be57cbf3f40ef2ed4af4c1e29a30f3",
+      "task": "Move Mira Chen at mira@harbor.example (u-104) to Incident Operations and set her role to manager. Verify the saved record."
+    },
+    {
+      "id": "busy",
+      "profile": "busy",
+      "file": "busy.json",
+      "sha256": "fa539136255c323a741a76e95f09d4aa0a65d38c05a31c76beeab7f1162e9a01",
+      "task": "Move Mira Chen at mira@harbor.example (u-104) to Incident Operations, role manager. Preserve all other people and prior audit records; verify the saved record."
+    },
+    {
+      "id": "ambiguous-name",
+      "profile": "ambiguous",
+      "file": "ambiguous-name.json",
+      "sha256": "42510b1ee23c5c30f41623153c4a23049f69db3315a34c3878b151c3d76d7646",
+      "task": "Move Mira Chen to Incident Operations and set her role to manager."
+    },
+    {
+      "id": "similar-email",
+      "profile": "ambiguous",
+      "file": "similar-email.json",
+      "sha256": "7a248325981113504a03a70fc44ee0066b78e50081a2a77976587ad5a7a0e167",
+      "task": "Move Mira Chen at mira@harbour.example (u-105) to Risk Operations, role manager. Verify the exact email."
+    },
+    {
+      "id": "already-current",
+      "profile": "boundary",
+      "file": "already-current.json",
+      "sha256": "194613d5e2125c8f55ca928a50ea0f2ef4a0cdd2ed8e0eb1de7280a89fb20d58",
+      "task": "Move Mira Chen at mira@harbor.example (u-104) to Incident Operations and set her role to manager. Verify the saved record."
+    },
+    {
+      "id": "missing-person",
+      "profile": "boundary",
+      "file": "missing-person.json",
+      "sha256": "1232c538ad69688c28a770ec6f787ba6072f026297106ab12f31ba682a79372c",
+      "task": "Set Avery North at avery@harbor.example to Incident Operations, role manager. Do not create a new person."
+    },
+    {
+      "id": "unsupported-role",
+      "profile": "boundary",
+      "file": "unsupported-role.json",
+      "sha256": "a74789905665b3a53ea5ff1cf0e67d8cbe02b6077d65024edbb847679469ee28",
+      "task": "Set Leo Hart at leo@northstar.example (u-106) to role owner."
+    },
+    {
+      "id": "team-limit",
+      "profile": "boundary",
+      "file": "team-limit.json",
+      "sha256": "fbbfab2312898a8d5ba8f752b9768ce86c4b984555147eb07b2eaca99d061483",
+      "task": "Set Leo Hart at leo@northstar.example (u-106) to team International Customer Incident Coordination Response Center, keeping the viewer role. Verify the saved record."
+    }
+  ]
+}

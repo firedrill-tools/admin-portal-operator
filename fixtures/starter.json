@@ -1,8 +1,35 @@
 {
   "users": [
-    {"id":"u-104","name":"Mira Chen","email":"mira@harbor.example","team":"Operations","role":"viewer","revision":1},
-    {"id":"u-105","name":"Mira Chen","email":"mira@harbour.example","team":"Finance","role":"editor","revision":1},
-    {"id":"u-106","name":"Leo Hart","email":"leo@northstar.example","team":"Accounts","role":"viewer","revision":1}
+    {
+      "id": "u-104",
+      "name": "Mira Chen",
+      "email": "mira@harbor.example",
+      "team": "Operations",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-105",
+      "name": "Mira Chen",
+      "email": "mira@harbour.example",
+      "team": "Finance",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-106",
+      "name": "Leo Hart",
+      "email": "leo@northstar.example",
+      "team": "Accounts",
+      "role": "viewer",
+      "revision": 1
+    }
   ],
-  "audit": []
+  "audit": [],
+  "dataset": {
+    "id": "atlas-admin-directory",
+    "version": "1.0.0",
+    "case_id": "starter",
+    "profile": "starter"
+  }
 }

@@ -1,8 +1,11 @@
-# Agent working notes
+# Working on the admin portal operator
 
-- `src/server.js` serves a local admin portal and read-only `/api/state`. `src/operator.js` runs an OpenAI Responses function-call loop with Playwright browser tools from `src/browser.js`.
-- Browser tools use visible roles and labels; no model-supplied arbitrary JavaScript or filesystem action. The browser starts at and stays within the configured local portal URL.
-- Each tool action saves a real screenshot and text view to `artifacts/<run-id>/`; the final trace records model response, actions and page state. The model is real only when `OPENAI_API_KEY` is provided.
-- State is one local JSON file with revision checks and an audit log. Copy `fixtures/starter.json` to `workspace.json` for a fresh run. Use one portal process per file.
-- Grading expectations belong outside the agent's browser context. Offline tests use scripted tool choices and must not be described as model proof.
-- No Firedrill integration until the new official interface is qualified.
+- Entry points: `src/server.js` owns the local Express portal, `src/operator.js` runs the native OpenAI Responses loop, and `src/browser.js` owns Chromium. `src/datasets.js` provides model-free list/init/help. Use `npm ci`; exact native dependencies/transitives are in `package-lock.json`.
+- Invoke with a task and optional native client, exact loopback origin, evidence root and AbortSignal. CLI configuration/exit codes and ownership are in README. Never add a hidden scripted production fallback or replace SDK execution with a mock agent.
+- Completion is a valid provider terminal answer, not a verified business effect. Inspect exact record/revision and audit changes separately. Reject unfinished/refused/parallel/malformed output before browser actions. Stop on uncertain saves; a later provider failure cannot undo a committed local edit.
+- Browser actions use exact visible roles/labels; no arbitrary JS, URL/file/API tool. Page JavaScript is disabled; foreign network, WebSockets/popups/downloads are blocked. Preserve cleanup at navigation startup, failures and cancellation. Model input is text/control observations; screenshots are actual evidence, not model image input.
+- Each run owns a fresh browser/context and in-memory stateless conversation. Abort requests on exit; preserve caller-owned fetch/SDK resources. Raw response/error/partial-body evidence is captured before SDK parsing, including HTTP failures and their usage. Unknown usage/cost is not zero.
+- One portal process per JSON file. Fresh reads + exact integer revision checks reject stale forms; atomic private publication keeps record and audit coherent. No multi-process write lock is provided. Stop portal and recreate a disposable workspace with `datasets init` to reset; leave evidence intact.
+- `fixtures/manifest.json` binds eight coherent cases/four profiles to hashes and identity. `scripts/build-fixtures.js` generates deterministic LF files. Busy data has 36 people/nine prior human edits. Test expectations/scenario briefs never enter browser/model context.
+- `npm test` runs real Chromium and actual OpenAI SDK over controlled fetch; choices are synthetic, not live model quality proof. `npm run check:package` checks a locked source archive outside checkout. No API key needed for either. Keep CI noninteractive; small proof before any larger campaign.
+- Only the fictional local JSON workspace is writable. Paid model access/budgets, public visibility/license and the new official Firedrill interface remain external gates. Do not invent platform APIs or use production accounts.

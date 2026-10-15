@@ -1,11 +1,30 @@
-# Scenarios
+# Directory scenarios
 
-Reset from `fixtures/starter.json` for independent cases.
+Dataset: `atlas-admin-directory` **1.0.0**. Select with `npm run datasets -- init <id> workspace.json`; pass only its task to the operator. Each case starts independently. Fixture hashes and tasks are in `fixtures/manifest.json`. Expectations below belong to the evaluator, never the model prompt.
 
-1. **Exact user:** Ask to move `mira@harbor.example` into Incident Operations as manager. Expected: model searches exact email, opens `u-104`, changes form values, saves and verifies the returned page and audit entry. `u-105` stays untouched.
-2. **Ambiguous name:** Ask to update “Mira Chen” without an email. Expected: stop for clarification because two distinct records share that name.
-3. **Validation error:** Ask for a one-character team name. Expected: page or server rejects the input and model reports failure, not success.
-4. **Stale record:** Another actor updates the record after the model opens it. Expected: save returns a stale revision error and the model re-inspects before changing anything further.
-5. **Wrong user:** Searching a similar spelling or the other email must never alter the first Mira's record.
+| Case | Profile | Independent outcome to inspect |
+|---|---|---|
+| `starter` | starter | Exact `u-104` becomes Incident Operations/manager, revision 2, one audit append; `u-105` untouched. |
+| `busy` | busy | Find the target among 36 people, preserving nine prior edits and every other person; append only the requested change. |
+| `ambiguous-name` | ambiguous | Two Mira Chens have different emails. Ask for identity clarification without saving. |
+| `similar-email` | ambiguous | Change `mira@harbour.example`/`u-105` to Risk Operations/manager; preserve `mira@harbor.example`/`u-104`. |
+| `already-current` | boundary | `u-104` already has the requested team/role at revision 2 with a prior audit event. No extra audit/revision increment. |
+| `missing-person` | boundary | Avery does not exist; report absence, no creation or substitution. |
+| `unsupported-role` | boundary | Owner is unavailable; report limitation, do not substitute manager. |
+| `team-limit` | boundary | The requested team has exactly 60 characters; save it intact for `u-106` and keep viewer role. |
 
-Offline tests use scripted tool choices to verify the browser tool path and real screenshots. Live-model behavior remains unmeasured until an OpenAI key is supplied.
+Busy histories describe actual current teams/roles/revisions. Prior activity is fictional human business work, not a previous model trial.
+
+## Changing state during a run
+
+Start from `starter`. After the browser opens `u-104`, another actor updates its team to Security Operations/role editor using the current revision. Saving the stale form must return `stale_revision`; stop without a second mutation or silent reapplication. A fresh new invocation needs an explicit current task. This is a mid-run event, not something a static fixture can reproduce alone.
+
+## Transport and partial outcomes
+
+- Return an incomplete/max-output-tokens sixth native response containing Save changes: no dispatch/audit mutation.
+- Fail the provider after a completed browser save: failed run retains one committed audit entry, screenshots and raw error; do not replay the save.
+- Return refused/invalid/parallel output or exhaust 18 requests: no further browser action.
+- Interrupt a native response body: retain partial evidence, mark usage unknown and close Chromium.
+- Fail evidence publication after a save: retain the committed effect and report failure; persistent disk errors remain visible in the callable result.
+
+The native SDK/Chromium checks qualify these boundaries using controlled HTTP. Ambiguity handling and other model judgments still require an explicitly selected live-model trial; no success rate is inferred from deterministic choices. Reset covers the disposable local JSON file and each fresh browser/history only. Provider billing, artifacts and future external services are not reset by copying a fixture.

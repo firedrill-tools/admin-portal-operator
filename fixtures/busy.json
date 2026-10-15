@@ -1,0 +1,408 @@
+{
+  "users": [
+    {
+      "id": "u-105",
+      "name": "Mira Chen",
+      "email": "mira@harbour.example",
+      "team": "Finance",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-106",
+      "name": "Leo Hart",
+      "email": "leo@northstar.example",
+      "team": "Accounts",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-201",
+      "name": "Nadia Cole",
+      "email": "nadia.cole@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 2
+    },
+    {
+      "id": "u-202",
+      "name": "Owen Marsh",
+      "email": "owen.marsh@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-203",
+      "name": "Priya Shah",
+      "email": "priya.shah@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-204",
+      "name": "Eli Brooks",
+      "email": "eli.brooks@atlas.example",
+      "team": "Accounts",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-205",
+      "name": "Inez Park",
+      "email": "inez.park@atlas.example",
+      "team": "Engineering",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-206",
+      "name": "Sam Rivera",
+      "email": "sam.rivera@atlas.example",
+      "team": "Workplace Services",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-207",
+      "name": "Tessa Reed",
+      "email": "tessa.reed@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-208",
+      "name": "Jon Vale",
+      "email": "jon.vale@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-209",
+      "name": "Ravi Moss",
+      "email": "ravi.moss@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-210",
+      "name": "Ada Lin",
+      "email": "ada.lin@atlas.example",
+      "team": "Accounts",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-211",
+      "name": "Noor Stone",
+      "email": "noor.stone@atlas.example",
+      "team": "Engineering",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-212",
+      "name": "Max Quinn",
+      "email": "max.quinn@atlas.example",
+      "team": "Workplace Services",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-213",
+      "name": "Amal Fox",
+      "email": "amal.fox@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 2
+    },
+    {
+      "id": "u-214",
+      "name": "Kai Rowan",
+      "email": "kai.rowan@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-215",
+      "name": "Wren Blake",
+      "email": "wren.blake@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-216",
+      "name": "Lena Ortiz",
+      "email": "lena.ortiz@atlas.example",
+      "team": "Accounts",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-217",
+      "name": "Alex Wynn",
+      "email": "alex.wynn@atlas.example",
+      "team": "Engineering",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-218",
+      "name": "Dev Shah",
+      "email": "dev.shah@atlas.example",
+      "team": "Workplace Services",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-219",
+      "name": "Jules Avery",
+      "email": "jules.avery@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-220",
+      "name": "Remy Lane",
+      "email": "remy.lane@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-221",
+      "name": "Taylor Gray",
+      "email": "taylor.gray@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-222",
+      "name": "Nico Hart",
+      "email": "nico.hart@atlas.example",
+      "team": "Accounts",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-223",
+      "name": "Maya Bell",
+      "email": "maya.bell@atlas.example",
+      "team": "Engineering",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-224",
+      "name": "Leah Kim",
+      "email": "leah.kim@atlas.example",
+      "team": "Workplace Services",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-225",
+      "name": "Ari Chen",
+      "email": "ari.chen@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 2
+    },
+    {
+      "id": "u-226",
+      "name": "Morgan Lake",
+      "email": "morgan.lake@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-227",
+      "name": "Sasha Dean",
+      "email": "sasha.dean@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-228",
+      "name": "Casey Holt",
+      "email": "casey.holt@atlas.example",
+      "team": "Accounts",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-229",
+      "name": "Robin West",
+      "email": "robin.west@atlas.example",
+      "team": "Engineering",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-230",
+      "name": "Dana Ross",
+      "email": "dana.ross@atlas.example",
+      "team": "Workplace Services",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-231",
+      "name": "Parker Lee",
+      "email": "parker.lee@atlas.example",
+      "team": "Customer Operations",
+      "role": "editor",
+      "revision": 1
+    },
+    {
+      "id": "u-232",
+      "name": "Sky Nguyen",
+      "email": "sky.nguyen@atlas.example",
+      "team": "Product Support",
+      "role": "viewer",
+      "revision": 1
+    },
+    {
+      "id": "u-233",
+      "name": "Jamie Wood",
+      "email": "jamie.wood@atlas.example",
+      "team": "Risk Operations",
+      "role": "viewer",
+      "revision": 2
+    },
+    {
+      "id": "u-104",
+      "name": "Mira Chen",
+      "email": "mira@harbor.example",
+      "team": "Operations",
+      "role": "viewer",
+      "revision": 1
+    }
+  ],
+  "audit": [
+    {
+      "user_id": "u-201",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Customer Operations",
+        "role": "editor"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-205",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Engineering",
+        "role": "viewer"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-209",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Risk Operations",
+        "role": "viewer"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-213",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Customer Operations",
+        "role": "editor"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-217",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Engineering",
+        "role": "viewer"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-221",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Risk Operations",
+        "role": "viewer"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-225",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Customer Operations",
+        "role": "editor"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-229",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Engineering",
+        "role": "viewer"
+      },
+      "revision": 2
+    },
+    {
+      "user_id": "u-233",
+      "before": {
+        "team": "New Joiners",
+        "role": "viewer"
+      },
+      "after": {
+        "team": "Risk Operations",
+        "role": "viewer"
+      },
+      "revision": 2
+    }
+  ],
+  "dataset": {
+    "id": "atlas-admin-directory",
+    "version": "1.0.0",
+    "case_id": "busy",
+    "profile": "busy"
+  }
+}
