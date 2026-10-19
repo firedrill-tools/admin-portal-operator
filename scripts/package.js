@@ -10,8 +10,8 @@ const target = path.resolve(process.argv[2] || path.join(root, "artifacts", `adm
 const staging = fs.mkdtempSync(path.join(os.tmpdir(), "firedrill-admin-source-"));
 try {
   const directory = path.join(staging, "package"); fs.mkdirSync(directory);
-  for (const name of ["src", "public", "fixtures", "scripts", "tests", "scenarios", "README.md", "AGENTS.md", "package.json", "package-lock.json", ".gitignore", ".gitattributes"]) {
-    fs.cpSync(path.join(root, name), path.join(directory, name), { recursive: true });
+  for (const name of ["firedrill", ".github", "src", "public", "fixtures", "scripts", "tests", "scenarios", "README.md", "AGENTS.md", "package.json", "package-lock.json", ".gitignore", ".gitattributes"]) {
+    fs.cpSync(path.join(root, name), path.join(directory, name), { recursive: true, filter: source => !["node_modules", ".runs"].includes(path.basename(source)) });
   }
   fs.mkdirSync(path.dirname(target), { recursive: true });
   execFileSync("tar", ["-czf", target, "-C", staging, "package"], { stdio: ["ignore", "pipe", "pipe"] });

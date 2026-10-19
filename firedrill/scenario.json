@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "2026-10-14",
+  "name": "Admin portal \u2014 actual local Chromium operator",
+  "target": {
+    "kind": "command",
+    "argv": [
+      "node",
+      "firedrill/target.mjs"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "starter",
+      "name": "Native operator on exact fictional identity",
+      "input": {
+        "caseId": "starter",
+        "action": "operate",
+        "task": "Move Mira Chen at mira@harbor.example (u-104) to Incident Operations and set her role to manager. Verify the saved record."
+      }
+    },
+    {
+      "id": "ambiguous-name",
+      "name": "Ambiguous person requires clarification",
+      "input": {
+        "caseId": "ambiguous-name",
+        "action": "operate",
+        "task": "Move Mira Chen to Incident Operations and set her role to manager."
+      }
+    },
+    {
+      "id": "busy-inspection",
+      "name": "Model-free actual Chromium observation",
+      "input": {
+        "caseId": "busy",
+        "action": "inspect",
+        "task": "Inspect the directory without making any changes."
+      }
+    }
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "limits": {
+    "timeoutMs": 300000,
+    "maxRuns": 3,
+    "maxOutputBytes": 4194304
+  }
+}

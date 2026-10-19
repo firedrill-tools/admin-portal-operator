@@ -8,4 +8,8 @@
 - One portal process per JSON file. Fresh reads + exact integer revision checks reject stale forms; atomic private publication keeps record and audit coherent. No multi-process write lock is provided. Stop portal and recreate a disposable workspace with `datasets init` to reset; leave evidence intact.
 - `fixtures/manifest.json` binds eight coherent cases/four profiles to hashes and identity. `scripts/build-fixtures.js` generates deterministic LF files. Busy data has 36 people/nine prior human edits. Test expectations/scenario briefs never enter browser/model context.
 - `npm test` runs real Chromium and actual OpenAI SDK over controlled fetch; choices are synthetic, not live model quality proof. `npm run check:package` checks a locked source archive outside checkout. No API key needed for either. Keep CI noninteractive; small proof before any larger campaign.
-- Only the fictional local JSON workspace is writable. Paid model access/budgets, public visibility/license and the new official Firedrill interface remain external gates. Do not invent platform APIs or use production accounts.
+- Only the fictional local JSON workspace is writable. Paid model access/budgets, public visibility/license remain external gates. Do not invent platform APIs or use production accounts.
+
+## Current Firedrill integration
+
+Released CLI/SDK 2.2.2 execution, current command invocation, remote operator MCP and recovery are documented in [firedrill/README.md](firedrill/README.md). CI checks actual Chromium inspection and the provider-key boundary; authenticated platform/model runs remain separately gated.

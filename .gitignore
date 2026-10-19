@@ -4,3 +4,6 @@ artifacts/
 .env
 *.tgz
 *.tar.gz
+
+node_modules/
+.runs/

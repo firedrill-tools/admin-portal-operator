@@ -14,5 +14,7 @@ jobs:
       - run: npm run fixtures:build
       - run: git diff --exit-code -- fixtures
       - run: npm test
+      - run: npm ci --prefix firedrill --ignore-scripts --no-audit --no-fund
+      - run: npm test --prefix firedrill
       - run: npm run check:package
       - run: npm audit --audit-level=low

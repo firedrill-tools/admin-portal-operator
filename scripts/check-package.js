@@ -21,6 +21,9 @@ try {
   const directory = path.join(temp, "package");
   if (!fs.existsSync(path.join(directory, "package-lock.json"))) throw new Error("archive lacks locked dependencies");
   run("npm", ["ci", "--ignore-scripts", "--no-audit", "--no-fund"], directory);
+  if (!fs.existsSync(path.join(directory, "firedrill", "scenario.json")) || fs.existsSync(path.join(directory, "firedrill", "node_modules"))) throw new Error("archive integration source/dependency boundary differs");
+  run("npm", ["ci", "--prefix", "firedrill", "--ignore-scripts", "--no-audit", "--no-fund"], directory);
+  run("npm", ["test", "--prefix", "firedrill"], directory);
   const manifest = JSON.parse(run(process.execPath, ["src/datasets.js", "list"], directory));
   if (manifest.cases.length !== 8) throw new Error("packaged dataset list differs");
   run(process.execPath, ["src/datasets.js", "--help"], directory);

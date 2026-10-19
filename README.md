@@ -64,3 +64,7 @@ npm run package
 Thirty-two offline checks use the actual OpenAI JS 7.34.0 Responses SDK over controlled HTTP and actual Chromium/portal traffic. They reproduce the sixth-response incomplete-save defect, failure after a committed save, stale/ambiguous edits, invalid output, raw usage/errors, request exhaustion, cancellation, data integrity and publication failure. Controlled choices prove the execution boundary; they do not measure model judgment. CI also checks fixture regeneration and the locked source archive outside the checkout (help/list/eight initializations, missing-key preflight and a real loopback portal). `npm run package` creates a private source archive containing code, fixtures, checks and `package-lock.json`; this does not publish an npm package.
 
 Live model quality/billing, the new official Firedrill integration and publication/license approval remain pending. No paid model run or compatibility benchmark is claimed. Explore the [example catalog](https://github.com/firedrill-tools/firedrill-example-catalog), [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Connect the released Firedrill interface through the callable/CLI seam after qualification.
+
+## Current Firedrill integration
+
+Released CLI/SDK 2.2.2 execution, current command invocation, remote operator MCP and recovery are documented in [firedrill/README.md](firedrill/README.md). CI checks actual Chromium inspection and the provider-key boundary; authenticated platform/model runs remain separately gated.
