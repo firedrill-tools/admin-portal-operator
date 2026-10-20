@@ -2,19 +2,25 @@
 
 The optional toolchain pins released `@firedrill-run/cli` and `@firedrill-run/sdk` **2.2.2** (October 19, 2026), Node 22+. The app retains its locked OpenAI and Playwright dependencies.
 
-## Prepare and run
+## Set up Firedrill
 
-From the repository root:
+From the repository root, install this application's locked dependencies and the optional simulation clients:
 
 ```sh
 npm ci
 npx playwright install chromium
 npm ci --prefix firedrill --ignore-scripts --no-audit --no-fund
-npm test --prefix firedrill
-node firedrill/node_modules/@firedrill-run/cli/bin/firedrill.mjs validate firedrill/scenario.json --json --non-interactive
 ```
 
-Validation is offline. In a human terminal, use the same CLI `init` to authorize/select the actual project/environment. Automation uses protected `FIREDRILL_TOKEN`, `FIREDRILL_PROJECT_ID`, `FIREDRILL_ENVIRONMENT_ID`. Model operations independently need `OPENAI_API_KEY` and an enabled `OPENAI_MODEL` or recipe model parameter. Do not put credentials in recipes.
+Sign in and choose the Firedrill project and environment once:
+
+```sh
+npx firedrill-run init
+```
+
+Complete browser authorization when prompted. Initialization writes `firedrill.config.json` in this repository; it does not run the AI agent. Installation choices are optional: skip duplicate SDK/client installation if you are using the locked `firedrill/` toolchain above. Keep this application's runtime requirements from the root README; the clients' Node.js minimum does not replace them.
+
+Automation uses protected `FIREDRILL_TOKEN`, `FIREDRILL_PROJECT_ID`, `FIREDRILL_ENVIRONMENT_ID`. Model operations independently need `OPENAI_API_KEY` and an enabled `OPENAI_MODEL` or recipe model parameter. Do not put credentials in recipes.
 
 After scope and provider budget are authorized:
 
@@ -28,6 +34,17 @@ The sequential bounded recipe includes two native operator tasks and one model-f
 Each attempt retains private `.runs/firedrill/attempt-*` state and `invocation.json` mapping outer run/attempt/scenario IDs before application dispatch. Operator/CI credentials are removed from the child environment. Only explicit bounded case/action/task input and optional model configuration are accepted; controller assessments and unsupported Tool bindings are rejected. Normal operator permissions remain restricted to the fictional local portal. A provider final answer does not verify business effects: compare actual before/after state and original audit, and inspect the operator trace. A later error cannot roll back an earlier save.
 
 The owned browser and portal are closed in `finally`, including key preflight failure. The driver retains actual failure reports/partial state. Existing browser origin restrictions, request/output bounds and native cancellation remain in place. Local process cleanup does not prove provider cancellation or billing completion. Output paths/screenshots are local evidence, **not uploaded Firedrill artifacts**. A new attempt creates fresh state; it never resets earlier evidence.
+
+## Offline verification
+
+These checks are optional when getting started; they do not authorize an account or run a paid model:
+
+```sh
+node firedrill/node_modules/@firedrill-run/cli/bin/firedrill.mjs validate firedrill/scenario.json --json --non-interactive
+npm test --prefix firedrill
+```
+
+The saved recipe is an observation/exploration example, not a claim of agent correctness. It has no Firedrill rubric or CI gate. Execution success and any application-owned checks are distinct from a scored assessment. Local evidence paths are not uploaded captures; the evidence and proof limits described in this guide remain in effect.
 
 ## MCP and recovery
 
