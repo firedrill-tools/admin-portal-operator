@@ -4,6 +4,8 @@ An OpenAI Responses agent searches a fictional people directory, opens an exact 
 
 Simulate this OpenAI Responses AI agent with [Firedrill](https://firedrill.run/), a simulation platform for AI agents. Start with the [Firedrill setup and simulation guide](firedrill/README.md); your coding agent can operate it while this application's runner stays in your repository or CI.
 
+This example repository is publicly viewable. A project license has not been selected.
+
 ## Run a small case
 
 Requires Node.js 24, npm, Playwright Chromium and an OpenAI API key for model execution. Dependencies are locked in `package-lock.json`.
@@ -65,7 +67,7 @@ npm run package
 
 Thirty-two offline checks use the actual OpenAI JS 7.34.0 Responses SDK over controlled HTTP and actual Chromium/portal traffic. They reproduce the sixth-response incomplete-save defect, failure after a committed save, stale/ambiguous edits, invalid output, raw usage/errors, request exhaustion, cancellation, data integrity and publication failure. Controlled choices prove the execution boundary; they do not measure model judgment. CI also checks fixture regeneration and the locked source archive outside the checkout (help/list/eight initializations, missing-key preflight and a real loopback portal). `npm run package` creates a private source archive containing code, fixtures, checks and `package-lock.json`; this does not publish an npm package.
 
-Live model quality/billing, authenticated Firedrill persistence and publication/license approval remain pending. No paid model run or compatibility benchmark is claimed. Explore the [example catalog](https://github.com/firedrill-tools/firedrill-example-catalog), [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Use the checked-in [Firedrill integration](firedrill/README.md) through the existing CLI seam; authenticated persistence is a separate verification step.
+Live model quality/billing, authenticated Firedrill persistence and license approval remain pending. No paid model run or compatibility benchmark is claimed. Explore the [example catalog](https://github.com/firedrill-tools/firedrill-example-catalog), [Firedrill](https://firedrill.run/) and [official developer documentation](https://docs.firedrill.run/). Use the checked-in [Firedrill integration](firedrill/README.md) through the existing CLI seam; authenticated persistence is a separate verification step.
 
 ## Current Firedrill integration
 
